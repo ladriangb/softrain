@@ -34,7 +34,7 @@ class DepartamentoController {
     }
 
     def obtenerUbicacion() {
-        respond departamentoService.obtenerUbicacion()
+        render departamentoService.obtenerUbicacion()
     }
 
     @Transactional
