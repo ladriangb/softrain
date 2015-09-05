@@ -14,6 +14,7 @@ class Departamento {
     String nombre
     String detalle
     String webPage
+    String ubicacion
     /* Automatic timestamping of GORM */
     //	Date	dateCreated
     //	Date	lastUpdated
@@ -30,6 +31,7 @@ class Departamento {
         nombre size: 5..15, nullable:false, blank:false
         detalle blank:true,nullable:true
         webPage url:true,blank:true,nullable:true
+        ubicacion blank:true,nullable:true
     }
 	
     /*
