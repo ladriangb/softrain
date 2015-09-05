@@ -14,6 +14,8 @@ class DepartamentoService {
     def serviceMethod() {
 
     }
+    def obtenerUbicacion () {
+        return "Ubicación: Torre Exa. Softrain"
     
     public guardarUbicacion(){
         return "Guardado"

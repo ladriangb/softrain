@@ -11,6 +11,8 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class DepartamentoController {
 
+    def departamentoService
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
 	def index(Integer max) {
@@ -29,6 +31,10 @@ class DepartamentoController {
 
     def create() {
         respond new Departamento(params)
+    }
+
+    def obtenerUbicacion() {
+        respond departamentoService.obtenerUbicacion()
     }
 
     @Transactional
@@ -71,9 +77,9 @@ class DepartamentoController {
         }
 
         departamentoInstance.save flush:true
-Thread t= new Thread( new Runnable(){
-        public void run(){}   
-});
+        Thread t= new Thread( new Runnable(){
+            public void run(){}   
+        });
         request.withFormat {
             form {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Departamento.label', default: 'Departamento'), departamentoInstance.id])
