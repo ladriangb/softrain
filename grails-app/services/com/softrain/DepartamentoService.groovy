@@ -14,4 +14,9 @@ class DepartamentoService {
     def serviceMethod() {
 
     }
+    
+    public guardarUbicacion(){
+        return "Guardado"
+    }
+    
 }
